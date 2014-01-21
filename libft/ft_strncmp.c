@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/22 15:51:12 by gpetrov           #+#    #+#             */
-/*   Updated: 2013/11/25 16:57:34 by gpetrov          ###   ########.fr       */
+/*   Created: 2013/12/22 18:44:02 by gpetrov           #+#    #+#             */
+/*   Updated: 2013/12/27 16:15:15 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		ret;
+	int		re;
 
-	ret = 0;
-	while (!(ret = *(unsigned char *) s1 - *(unsigned char *) s2) && *s2 && n--)
+	re = 0;
+	while (!(re = *(unsigned char *) s1 - *(unsigned char *) s2) && *s2 && n--)
 	{
 		++s1;
 		++s2;
 	}
-	if (ret < 0)
-		ret = -1;
-	else if (ret > 0)
-		ret = 1 ;
-	return (ret);
+	if (re < 0)
+		re = -1;
+	else if (re > 0)
+		re = 1 ;
+	return (re);
 }
