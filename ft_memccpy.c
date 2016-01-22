@@ -6,28 +6,27 @@
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 18:43:51 by gpetrov           #+#    #+#             */
-/*   Updated: 2013/12/22 18:43:51 by gpetrov          ###   ########.fr       */
+/*   Updated: 2016/01/22 13:41:53 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (s1 && s2 && c && n)
+	if (!dest || !src)
+		return (NULL);
+	while (i < n && src)
 	{
-		while (i < n)
-		{
-			*((char *)s1 + i) = *((char *)s2 + i);
-			if (*((char *)s2 + i) == (char)c)
-			{
-				return ((char *)s1 + i + 1);
-			}
-			i++;
-		}
+		if (*(char *)src == (char)c)
+			return (++dest);
+		*(char *)dest = *(char *)src;
+		dest++;
+		src++;
+		i++;
 	}
 	return (NULL);
 }

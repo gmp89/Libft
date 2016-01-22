@@ -6,7 +6,7 @@
 #    By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 14:00:38 by gpetrov           #+#    #+#              #
-#    Updated: 2014/02/17 22:02:01 by gpetrov          ###   ########.fr        #
+#    Updated: 2016/01/22 13:00:05 by gpetrov          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -32,7 +32,7 @@ SRCS 	= ft_atoi.c ft_putchar.c ft_strlen.c \
 		get_next_line.c
 OBJS	= ${SRCS:.c=.o}
 INC		= includes/
-FLAGS 	= -Wall -Wextra -Werror -pedantic -O3
+FLAGS 	= -Wall -Wextra -Werror -O3
 
 all: $(NAME)
 

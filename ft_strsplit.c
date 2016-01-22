@@ -6,7 +6,7 @@
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 18:44:04 by gpetrov           #+#    #+#             */
-/*   Updated: 2013/12/26 17:59:11 by gpetrov          ###   ########.fr       */
+/*   Updated: 2016/01/22 12:30:32 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	*ft_createstr(char *s, char *s2, char c, int start)
 		i++;
 		start++;
 	}
-	s2[i] = '\0';
+	s2[i] = 0;
 	return (s2);
 }
 
@@ -84,7 +84,7 @@ static char	**ft_createtab(char **tab, char *s, char c, int start)
 		else
 			return (NULL);
 	}
-	tab[j] = '\0';
+	tab[j] = 0;
 	return (tab);
 }
 

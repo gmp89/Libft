@@ -14,28 +14,20 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 
-	if (ft_strlen((char *)s2) == 0)
-		return ((char *)s1);
-	if (ft_strlen((char *)s2) > (int)n)
-		return (NULL);
 	i = 0;
-	j = 0;
-	while (s1[i] && n > 0)
+	if (!*s2)
+		return ((char *)s1);
+	while (s1[i] && i < n)
 	{
-		while ((s1[i] == s2[j]) && (s2[j]))
-		{
-			i++;
-			j++;
-		}
-		if (ft_strlen((char *)s2) == j)
-			return ((char *)(s1 + i - j));
-		else
-			i = i - j + 1;
 		j = 0;
-		n--;
+		while (s1[i + j] == s2[j] && s1[i + j] && s2[j] && (i + j) < n)
+			j++;
+		if (!s2[j])
+			return ((char *)&s1[i]);
+		i++;
 	}
 	return (NULL);
 }
